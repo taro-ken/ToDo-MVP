@@ -7,9 +7,9 @@
 
 import UIKit
 
-class ToDoViewController: UIViewController {
+final class ToDoViewController: UIViewController {
     
-    @IBOutlet weak var todoText: UITextField!
+    @IBOutlet private weak var todoText: UITextField!
     
     @IBOutlet private weak var tableView: UITableView! {
         didSet {
@@ -28,7 +28,7 @@ class ToDoViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    @IBAction func tapAdd(_ sender: Any) {
+    @IBAction private func tapAdd(_ sender: Any) {
         presenter.add(text: todoText.text)
         todoText.text = ""
     }
